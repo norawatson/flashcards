@@ -1,6 +1,7 @@
 <script>
 	import Header from './Header.svelte';
 	import './styles.css';
+	import "@picocss/pico/css/pico.min.css";
 </script>
 
 <div class="app">
@@ -11,7 +12,7 @@
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<p>made by <a href="https://github.com/norawatson">Nora Watson</a></p>
 	</footer>
 </div>
 
@@ -20,6 +21,7 @@
 		display: flex;
 		flex-direction: column;
 		min-height: 100vh;
+		position: relative;
 	}
 
 	main {
@@ -31,6 +33,7 @@
 		max-width: 64rem;
 		margin: 0 auto;
 		box-sizing: border-box;
+		position: relative;
 	}
 
 	footer {
