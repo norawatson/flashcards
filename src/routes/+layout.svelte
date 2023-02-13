@@ -1,7 +1,7 @@
 <script>
 	import Header from './Header.svelte';
-	import './styles.css';
 	import "@picocss/pico/css/pico.min.css";
+	import './styles.css';
 </script>
 
 <div class="app">
@@ -11,9 +11,6 @@
 		<slot />
 	</main>
 
-	<footer>
-		<p>made by <a href="https://github.com/norawatson">Nora Watson</a></p>
-	</footer>
 </div>
 
 <style>
@@ -36,21 +33,4 @@
 		position: relative;
 	}
 
-	footer {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
-	}
-
-	footer a {
-		font-weight: bold;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
-	}
 </style>

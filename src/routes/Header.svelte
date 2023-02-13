@@ -1,11 +1,12 @@
 <script>
 	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
+	import logo from '$lib/images/flashcard-logo.svg';
 	import github from '$lib/images/github.svg';
 </script>
 
 <header>
 	<div class="corner">
+		<img class="logo" src={logo} alt="flashcards" />
 	</div>
 
 	<nav>
@@ -39,8 +40,8 @@
 	}
 
 	.corner {
-		width: 3em;
-		height: 3em;
+		width: 3.5em;
+		height: 3.5em;
 	}
 
 	.corner a {
@@ -52,9 +53,16 @@
 	}
 
 	.corner img {
-		width: 2em;
-		height: 2em;
+		width: 3em;
+		height: 3em;
 		object-fit: contain;
+	}
+
+	.corner img.logo {
+		width: 3.25em;
+		height: 3.25em;
+		margin-left: 0.375em;
+		margin-top: 0.375em;
 	}
 
 	nav {
@@ -115,6 +123,7 @@
 		letter-spacing: 0.1em;
 		text-decoration: none;
 		transition: color 0.2s linear;
+		margin-top: 0;
 	}
 
 	a:hover {
