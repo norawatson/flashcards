@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Markdown from "$lib/Markdown.svelte";
+
 	interface Flashcard {
 		question: string;
 		answer: string;
@@ -6,8 +8,12 @@
 
 	const cards: Flashcard[] = [
 		{
-			question: "Fill in the blanks to complete the definition.",
-			answer: "This is what goes in the blanks."
+			question: `Evaluate the following integral.
+
+$$
+\\int_0^π \\sin x \\mathrm{d}x
+$$`,
+			answer: "$$\n2\n$$"
 		},
 		{
 			question: "What is the definition?",
@@ -22,6 +28,8 @@
 		if (showAnswer) {
 			if (currentIndex < cards.length - 1) {
 				currentIndex = currentIndex + 1;
+			} else {
+				currentIndex = 0;
 			}
 			showAnswer = false;
 		} else {
@@ -38,10 +46,9 @@
 
 
 <div class="card-container">
-	<article class="question-card">
-		{currentIndex + 1}.
-		{cards[currentIndex][showAnswer ? "answer" : "question"]}
-	</article>
+	<Markdown
+		defaultValue={cards[currentIndex][showAnswer ? "answer" : "question"]}
+		readonly/>
 	<button on:click={revealOrStep}>
 		{showAnswer ? "Next" : "Show me!"}
 	</button>
@@ -52,14 +59,12 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		align-items: center;
+		align-items: stretch;
+		gap: 1rem;
 		width: 60%;
 		height: 100%;
 		margin-left: auto;
 		margin-right: auto;
-	}
-
-	.question-card {
-		width: 100%;
+		margin-top: 4rem;
 	}
 </style>
